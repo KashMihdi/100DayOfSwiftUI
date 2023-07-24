@@ -18,6 +18,6 @@ A mobile app that makes it easy to split the account with other friends and calc
 
 ##
 
-**Screenshoots :**
+#### Screenshoots :
 
 <img src="screenshot/WeSplit.gif" width="250"/>
