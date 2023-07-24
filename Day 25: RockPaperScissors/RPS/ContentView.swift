@@ -24,9 +24,9 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                Color.indigo.ignoresSafeArea()
+                Color.blue.opacity(0.7).ignoresSafeArea()
                 VStack(spacing: 40) {
-                    Text("You score: \(score)")
+                    Text("Your score: \(score)")
                         .font(.largeTitle)
                         .padding(.top, 50)
                     
@@ -50,8 +50,9 @@ struct ContentView: View {
                                     .font(.system(size: 80))
                                     .padding()
                                     .background(
-                                        Color.purple.cornerRadius(16)
+                                        Color.blue.cornerRadius(16)
                                     )
+                                    .shadow(radius: 10)
                             }
 
                         }
