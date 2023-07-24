@@ -8,7 +8,13 @@ A mobile app that makes it easy to split the account with other friends and calc
 
 **Features Used :**
 
-Form, Section, NavigationView, TextField, Picker, ForEach, @State
+- Form, 
+- Section, 
+- NavigationView, 
+- TextField, 
+- Picker, 
+- ForEach, 
+- @State
 
 ##
 
