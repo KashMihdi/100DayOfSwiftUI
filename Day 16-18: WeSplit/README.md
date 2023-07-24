@@ -14,3 +14,4 @@ Form, Section, NavigationView, TextField, Picker, ForEach, @State
 
 **Screenshoots :**
 
+<img src="screenshot/WeSplit.gif" width="250"/>
