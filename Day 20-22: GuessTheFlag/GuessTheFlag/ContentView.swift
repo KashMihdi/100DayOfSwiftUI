@@ -22,21 +22,19 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             RadialGradient(stops: [
-                .init(color: Color(red: 0.1, green: 0.2, blue: 0.45), location: 0.3),
-                .init(color: Color(red: 0.76, green: 0.15, blue: 0.3), location: 0.3)
-                ],
-                center: .top,
-                startRadius: 200,
-                endRadius: 700)
-                .ignoresSafeArea()
+                .init(color: Color(red: 0.4, green: 0.3, blue: 0.45), location: 0.3),
+                .init(color: Color(red: 0.66, green: 0.55, blue: 0.5), location: 0.3)
+            ],
+                           center: .top,
+                           startRadius: 200,
+                           endRadius: 700)
+            .ignoresSafeArea()
             
             VStack {
                 Spacer()
                 
                 Text("Guess the flag")
                     .headlineStyle()
-//                    .font(.largeTitle.bold())
-//                    .foregroundColor(.white)
                 
                 VStack(spacing: 15) {
                     VStack {
@@ -55,6 +53,11 @@ struct ContentView: View {
                             flagTapped(number)
                         } label: {
                             FlagImage(imageName: countries[number])
+                                .opacity(showingScore ? (number == correctAnswer ? 1 : 0.5) : 1)
+                                .scaleEffect(showingScore ? (number == correctAnswer ? 1.1 : 0.8) : 1)
+                                .rotation3DEffect(
+                                    .degrees(showingScore && number == correctAnswer ? 360 : 0),
+                                    axis: (x: 0, y: 1, z: 0))
                         }
                     }
                 }
@@ -66,19 +69,26 @@ struct ContentView: View {
                 Spacer()
                 Spacer()
                 
-                Text("Score: \(score)")
-                    .font(.title.bold())
-                    .foregroundColor(.white)
+                HStack {
+                    if !showingScore {
+                        Text("Score: \(score) ")
+                            .font(.system(size: 40).bold())
+                            .foregroundColor(.white)
+                    } else {
+                        Text(scoreTitle == "Correct" ? "+10" : "-10")
+                            .font(.largeTitle.bold())
+                            .foregroundColor(scoreTitle == "Correct" ? Color("lightGreen") : Color("darkRed"))
+                            .scaleEffect(showingScore ? 2 : 0)
+                            .transition(.move(edge: .bottom).combined(with: .opacity))
+                        
+                    }
+                }
                 
                 Spacer()
             }
             .padding()
         }
-        .alert(scoreTitle, isPresented: $showingScore) {
-            Button("Continue", action: askQuestion)
-        } message: {
-            Text("You score is \(score)")
-        }
+        .animation(.easeInOut, value: showingScore)
         .alert("You done", isPresented: $gameOver) {
             Button("Reset", action: reset)
         } message: {
@@ -92,17 +102,19 @@ struct ContentView: View {
             score += 10
         }
         showingScore.toggle()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+            showingScore.toggle()
+            askQuestion()
+        }
     }
     
     private func askQuestion() {
-        withAnimation {
-            if question < 8 {
-                countries.shuffle()
-                correctAnswer = Int.random(in: 0...2)
-                question += 1
-            } else {
-                gameOver.toggle()
-            }
+        if question < 8 {
+            countries.shuffle()
+            correctAnswer = Int.random(in: 0...2)
+            question += 1
+        } else {
+            gameOver.toggle()
         }
     }
     
@@ -113,7 +125,7 @@ struct ContentView: View {
         question = 1
     }
 }
- 
+
 struct FlagImage: View {
     let imageName: String
     
@@ -133,7 +145,7 @@ struct TitleModifaer: ViewModifier {
     func body(content: Content) -> some View {
         content
             .font(.largeTitle.bold())
-            .foregroundColor(.blue)
+            .foregroundColor(.white)
     }
 }
 
