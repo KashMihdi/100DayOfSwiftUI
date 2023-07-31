@@ -15,21 +15,8 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             List {
-                ForEach(expenses.items) { item in
-                    HStack {
-                        VStack(alignment: .leading) {
-                            Text(item.name)
-                                .font(.headline)
-                            Text(item.type)
-                                .font(.subheadline)
-                        }
-                        
-                        Spacer()
-                        
-                        Text(item.amount, format: .currency(code: item.currency.rawValue))
-                    }
-                }
-                .onDelete(perform: removeItem)
+                displaySection(filter: "Personal")
+                displaySection(filter: "Business")
             }
             .navigationTitle("iExpense")
             .toolbar {
@@ -45,8 +32,50 @@ struct ContentView: View {
         }
     }
     
-    func removeItem(at offsets: IndexSet) {
-        expenses.items.remove(atOffsets: offsets)
+    @ViewBuilder
+    func displaySection(filter: String) -> some View {
+        Section {
+            ForEach(expenses.items.filter { $0.type == filter } ) { item in
+                HStack {
+                    VStack(alignment: .leading) {
+                        Text(item.name)
+                            .font(.headline)
+                        Text(item.type)
+                            .font(.subheadline)
+                    }
+                    
+                    Spacer()
+                    
+                    Text(item.amount, format: .currency(code: item.currency.rawValue))
+                        .foregroundColor(textColor(for: item.amount))
+                }
+            }
+            .onDelete { indexSet in
+                let item = expenses.items.filter { $0.type == filter }[indexSet.first!]
+                removeItem(withID: item.id)
+            }
+        } header: {
+            Text(filter)
+        }
+    }
+    
+    func removeItem(withID id: UUID) {
+        if let index = expenses.items.firstIndex(where: { $0.id == id }) {
+            expenses.items.remove(at: index)
+        }
+    }
+    
+    func textColor(for amount: Double) -> Color {
+        switch amount {
+        case ..<10:
+            return .black
+        case 10..<100:
+            return .green
+        case 100..<1000:
+            return .blue
+        default:
+            return .red
+        }
     }
 }
 
