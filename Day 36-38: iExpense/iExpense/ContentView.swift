@@ -51,16 +51,17 @@ struct ContentView: View {
                 }
             }
             .onDelete { indexSet in
-                let item = expenses.items.filter { $0.type == filter }[indexSet.first!]
-                removeItem(withID: item.id)
+                remove(at: indexSet, filter: filter)
             }
         } header: {
             Text(filter)
         }
     }
     
-    func removeItem(withID id: UUID) {
-        if let index = expenses.items.firstIndex(where: { $0.id == id }) {
+    func remove(at offsets: IndexSet, filter name: String) {
+        guard let index = offsets.first else { return }
+        let item = expenses.items.filter { $0.type == name }[index]
+        if let index = expenses.items.firstIndex(where: { $0.id == item.id }) {
             expenses.items.remove(at: index)
         }
     }
