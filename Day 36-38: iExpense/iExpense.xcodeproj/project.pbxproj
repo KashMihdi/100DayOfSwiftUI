@@ -13,6 +13,7 @@
 		FD1DFAAA2A77D73300E59DAE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD1DFAA92A77D73300E59DAE /* Preview Assets.xcassets */; };
 		FD1DFAB12A77EFA300E59DAE /* ExpenseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1DFAB02A77EFA300E59DAE /* ExpenseItem.swift */; };
 		FD1DFAB32A77F02100E59DAE /* Expenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1DFAB22A77F02100E59DAE /* Expenses.swift */; };
+		FD9E72A32A77F7030055044B /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9E72A22A77F7030055044B /* AddView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		FD1DFAA92A77D73300E59DAE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FD1DFAB02A77EFA300E59DAE /* ExpenseItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseItem.swift; sourceTree = "<group>"; };
 		FD1DFAB22A77F02100E59DAE /* Expenses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expenses.swift; sourceTree = "<group>"; };
+		FD9E72A22A77F7030055044B /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 			children = (
 				FD1DFAA22A77D73200E59DAE /* iExpenseApp.swift */,
 				FD1DFAA42A77D73200E59DAE /* ContentView.swift */,
+				FD9E72A22A77F7030055044B /* AddView.swift */,
 				FD1DFAB02A77EFA300E59DAE /* ExpenseItem.swift */,
 				FD1DFAB22A77F02100E59DAE /* Expenses.swift */,
 				FD1DFAA62A77D73300E59DAE /* Assets.xcassets */,
@@ -145,6 +148,7 @@
 			files = (
 				FD1DFAB32A77F02100E59DAE /* Expenses.swift in Sources */,
 				FD1DFAA52A77D73200E59DAE /* ContentView.swift in Sources */,
+				FD9E72A32A77F7030055044B /* AddView.swift in Sources */,
 				FD1DFAB12A77EFA300E59DAE /* ExpenseItem.swift in Sources */,
 				FD1DFAA32A77D73200E59DAE /* iExpenseApp.swift in Sources */,
 			);
