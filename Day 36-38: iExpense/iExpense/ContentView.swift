@@ -34,27 +34,29 @@ struct ContentView: View {
     
     @ViewBuilder
     func displaySection(filter: String) -> some View {
-        Section {
-            ForEach(expenses.items.filter { $0.type == filter } ) { item in
-                HStack {
-                    VStack(alignment: .leading) {
-                        Text(item.name)
-                            .font(.headline)
-                        Text(item.type)
-                            .font(.subheadline)
+        if !expenses.items.filter({ $0.type == filter }).isEmpty{
+            Section {
+                ForEach(expenses.items.filter { $0.type == filter } ) { item in
+                    HStack {
+                        VStack(alignment: .leading) {
+                            Text(item.name)
+                                .font(.headline)
+                            Text(item.type)
+                                .font(.subheadline)
+                        }
+                        
+                        Spacer()
+                        
+                        Text(item.amount, format: .currency(code: item.currency.rawValue))
+                            .foregroundColor(textColor(for: item.amount))
                     }
-                    
-                    Spacer()
-                    
-                    Text(item.amount, format: .currency(code: item.currency.rawValue))
-                        .foregroundColor(textColor(for: item.amount))
                 }
+                .onDelete { indexSet in
+                    remove(at: indexSet, filter: filter)
+                }
+            } header: {
+                Text(filter)
             }
-            .onDelete { indexSet in
-                remove(at: indexSet, filter: filter)
-            }
-        } header: {
-            Text(filter)
         }
     }
     
