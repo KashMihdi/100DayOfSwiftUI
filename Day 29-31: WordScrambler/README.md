@@ -1,4 +1,4 @@
-# Day 39-31:  WordScramble 📔
+# Day 29-31:  WordScramble 📔
 
 ### Purpose of the App :
 
