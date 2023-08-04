@@ -8,17 +8,32 @@
 
 /* Begin PBXBuildFile section */
 		FD0AC4A72A7A95AD0041F151 /* DrawingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0AC4A62A7A95AD0041F151 /* DrawingApp.swift */; };
-		FD0AC4A92A7A95AD0041F151 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0AC4A82A7A95AD0041F151 /* ContentView.swift */; };
+		FD0AC4A92A7A95AD0041F151 /* ArrowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0AC4A82A7A95AD0041F151 /* ArrowView.swift */; };
 		FD0AC4AB2A7A95AE0041F151 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD0AC4AA2A7A95AE0041F151 /* Assets.xcassets */; };
 		FD0AC4AE2A7A95AE0041F151 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD0AC4AD2A7A95AE0041F151 /* Preview Assets.xcassets */; };
+		FD4D1F7E2A7D2B9000E32ED6 /* ColorCyclingRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4D1F7D2A7D2B9000E32ED6 /* ColorCyclingRectangle.swift */; };
+		FDBBD6B22A7D7D93000F56A2 /* BlendModesContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBBD6B12A7D7D93000F56A2 /* BlendModesContentView.swift */; };
+		FDBBD6B42A7D7DE2000F56A2 /* ColorCyclingCircleContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBBD6B32A7D7DE2000F56A2 /* ColorCyclingCircleContentView.swift */; };
+		FDBBD6B62A7D7E32000F56A2 /* FlowerContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBBD6B52A7D7E32000F56A2 /* FlowerContentView.swift */; };
+		FDBBD6B82A7D7F98000F56A2 /* TrapezoidContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBBD6B72A7D7F98000F56A2 /* TrapezoidContentView.swift */; };
+		FDBBD6BA2A7E0862000F56A2 /* CheckerboardContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBBD6B92A7E0862000F56A2 /* CheckerboardContentView.swift */; };
+		FDBBD6BC2A7E0B69000F56A2 /* SpirographContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBBD6BB2A7E0B69000F56A2 /* SpirographContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FD0AC4A32A7A95AD0041F151 /* Drawing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Drawing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD0AC4A62A7A95AD0041F151 /* DrawingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingApp.swift; sourceTree = "<group>"; };
-		FD0AC4A82A7A95AD0041F151 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FD0AC4A82A7A95AD0041F151 /* ArrowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrowView.swift; sourceTree = "<group>"; };
 		FD0AC4AA2A7A95AE0041F151 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FD0AC4AD2A7A95AE0041F151 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FD4D1F7D2A7D2B9000E32ED6 /* ColorCyclingRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCyclingRectangle.swift; sourceTree = "<group>"; };
+		FDBBD6B12A7D7D93000F56A2 /* BlendModesContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlendModesContentView.swift; sourceTree = "<group>"; };
+		FDBBD6B32A7D7DE2000F56A2 /* ColorCyclingCircleContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCyclingCircleContentView.swift; sourceTree = "<group>"; };
+		FDBBD6B52A7D7E32000F56A2 /* FlowerContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowerContentView.swift; sourceTree = "<group>"; };
+		FDBBD6B72A7D7F98000F56A2 /* TrapezoidContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrapezoidContentView.swift; sourceTree = "<group>"; };
+		FDBBD6B92A7E0862000F56A2 /* CheckerboardContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckerboardContentView.swift; sourceTree = "<group>"; };
+		FDBBD6BB2A7E0B69000F56A2 /* SpirographContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpirographContentView.swift; sourceTree = "<group>"; };
+		FDBBD6BE2A7E0D11000F56A2 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +50,7 @@
 		FD0AC49A2A7A95AD0041F151 = {
 			isa = PBXGroup;
 			children = (
+				FDBBD6BE2A7E0D11000F56A2 /* README.md */,
 				FD0AC4A52A7A95AD0041F151 /* Drawing */,
 				FD0AC4A42A7A95AD0041F151 /* Products */,
 			);
@@ -51,8 +67,14 @@
 		FD0AC4A52A7A95AD0041F151 /* Drawing */ = {
 			isa = PBXGroup;
 			children = (
+				FDBBD6BD2A7E0C85000F56A2 /* Challenge */,
 				FD0AC4A62A7A95AD0041F151 /* DrawingApp.swift */,
-				FD0AC4A82A7A95AD0041F151 /* ContentView.swift */,
+				FDBBD6B52A7D7E32000F56A2 /* FlowerContentView.swift */,
+				FDBBD6B32A7D7DE2000F56A2 /* ColorCyclingCircleContentView.swift */,
+				FDBBD6B12A7D7D93000F56A2 /* BlendModesContentView.swift */,
+				FDBBD6B72A7D7F98000F56A2 /* TrapezoidContentView.swift */,
+				FDBBD6B92A7E0862000F56A2 /* CheckerboardContentView.swift */,
+				FDBBD6BB2A7E0B69000F56A2 /* SpirographContentView.swift */,
 				FD0AC4AA2A7A95AE0041F151 /* Assets.xcassets */,
 				FD0AC4AC2A7A95AE0041F151 /* Preview Content */,
 			);
@@ -65,6 +87,15 @@
 				FD0AC4AD2A7A95AE0041F151 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		FDBBD6BD2A7E0C85000F56A2 /* Challenge */ = {
+			isa = PBXGroup;
+			children = (
+				FD0AC4A82A7A95AD0041F151 /* ArrowView.swift */,
+				FD4D1F7D2A7D2B9000E32ED6 /* ColorCyclingRectangle.swift */,
+			);
+			path = Challenge;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +168,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FD0AC4A92A7A95AD0041F151 /* ContentView.swift in Sources */,
+				FDBBD6B42A7D7DE2000F56A2 /* ColorCyclingCircleContentView.swift in Sources */,
+				FDBBD6B62A7D7E32000F56A2 /* FlowerContentView.swift in Sources */,
+				FDBBD6BC2A7E0B69000F56A2 /* SpirographContentView.swift in Sources */,
+				FDBBD6BA2A7E0862000F56A2 /* CheckerboardContentView.swift in Sources */,
+				FD0AC4A92A7A95AD0041F151 /* ArrowView.swift in Sources */,
+				FDBBD6B22A7D7D93000F56A2 /* BlendModesContentView.swift in Sources */,
+				FDBBD6B82A7D7F98000F56A2 /* TrapezoidContentView.swift in Sources */,
+				FD4D1F7E2A7D2B9000E32ED6 /* ColorCyclingRectangle.swift in Sources */,
 				FD0AC4A72A7A95AD0041F151 /* DrawingApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
