@@ -8,8 +8,39 @@
 import SwiftUI
 
 struct HomeView: View {
+    
+    @StateObject private var vm = HabitsViewModel()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            List {
+                ForEach(vm.habits) { habit in
+                    RowHabitView(habit: habit)
+                }
+            }
+            .scrollIndicators(.hidden)
+            .padding(.bottom, 80)
+            .listStyle(.inset)
+            .navigationTitle("Track your habit!")
+        }
+        .safeAreaInset(edge: .bottom) {
+            HStack {
+                Text(Date().formatted(date: .abbreviated, time: .omitted))
+                    .font(.title2.bold())
+                    .padding(.leading, 20)
+                    .underline()
+                Spacer()
+                Image(systemName: "plus")
+                    .font(.largeTitle)
+                    .padding()
+                    .background(.green)
+                    .clipShape(Circle())
+                    
+            }
+            .padding([.bottom, .horizontal], 20)
+            .offset(y: 20)
+            .background(.white)
+        }
     }
 }
 
