@@ -10,13 +10,15 @@ import SwiftUI
 struct RowHabitView: View {
     
     let habit: Habit
+    @Binding var showDetail: Bool
     
     var body: some View {
         ZStack(alignment: .leading) {
             
             ProgressRectangle(isComplete: habit.isComplete)
                 .fill(.green)
-                .frame(width: UIScreen.main.bounds.width * habit.progress - 32, height: 75)
+                .frame(width: max(UIScreen.main.bounds.width * habit.progress - 32, 0), height: 75)
+                .animation(.spring(), value: habit.progress)
             
             HStack(alignment: .center) {
                 Text(habit.name)
@@ -40,14 +42,19 @@ struct RowHabitView: View {
                         .font(.title3.bold())
                         .lineLimit(1)
                         .minimumScaleFactor(0.5)
-                    Text("\(habit.amount.asNumberStringDigit()) of \(habit.amountPerDay.asNumberStringDigit())")
+                    Text("\(habit.amount.asNumberStringPercent()) of \(habit.amountPerDay.asNumberStringDigit())")
                         .font(.callout)
                         .foregroundColor(.black.opacity(0.5))
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.5)
                 }
                 .frame(width: 70)
             }
             .frame(maxWidth: .infinity, alignment: .center)
             .padding()
+        }
+        .sheet(isPresented: $showDetail) {
+            Text(habit.name)
         }
     }
 }
@@ -70,6 +77,6 @@ struct ProgressRectangle: Shape {
 
 struct RowHabitView_Previews: PreviewProvider {
     static var previews: some View {
-        RowHabitView(habit: Habit(name: "Drink water", amount: 2, amountPerDay: 3))
+        RowHabitView(habit: Habit(name: "Drink water", amount: 2, amountPerDay: 3, measurement: "l"), showDetail: .constant(false))
     }
 }

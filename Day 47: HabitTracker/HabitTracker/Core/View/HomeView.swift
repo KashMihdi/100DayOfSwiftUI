@@ -9,19 +9,35 @@ import SwiftUI
 
 struct HomeView: View {
     
-    @StateObject private var vm = HabitsViewModel()
+    @EnvironmentObject private var vm: HabitsViewModel
+    @State private var showControlScreen = false
+    @State private var showNewHabitView = false
+    @State private var selectedHabit: Habit = Habit(name: "", amount: 0, amountPerDay: 0, measurement: "")
     
     var body: some View {
         NavigationStack {
             List {
                 ForEach(vm.habits) { habit in
-                    RowHabitView(habit: habit)
+                    Button {
+                        selectedHabit = habit
+                        showControlScreen.toggle()
+                    } label: {
+                        RowHabitView(habit: habit, showDetail: $showControlScreen)
+                    }
                 }
             }
             .scrollIndicators(.hidden)
             .padding(.bottom, 80)
             .listStyle(.inset)
             .navigationTitle("Track your habit!")
+        }
+        .sheet(isPresented: $showControlScreen) {
+            ControlScreenView(selectedItem: $selectedHabit)
+                .presentationDetents([.fraction(0.37)])
+                .presentationDragIndicator(.visible)
+        }
+        .sheet(isPresented: $showNewHabitView) {
+            NewHabitView()
         }
         .safeAreaInset(edge: .bottom) {
             HStack {
@@ -35,7 +51,10 @@ struct HomeView: View {
                     .padding()
                     .background(.green)
                     .clipShape(Circle())
-                    
+                    .onTapGesture {
+                        showNewHabitView.toggle()
+                    }
+                
             }
             .padding([.bottom, .horizontal], 20)
             .offset(y: 20)
@@ -47,5 +66,6 @@ struct HomeView: View {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
+            .environmentObject(HabitsViewModel())
     }
 }

@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct HabitTrackerApp: App {
+    @StateObject private var vm = HabitsViewModel()
     var body: some Scene {
         WindowGroup {
             HomeView()
+                .environmentObject(vm)
         }
     }
 }

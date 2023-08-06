@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FD8193242A7F7F1E00868DCD /* NewHabitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8193232A7F7F1E00868DCD /* NewHabitView.swift */; };
+		FD8193262A7F830400868DCD /* HabitTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8193252A7F830400868DCD /* HabitTextField.swift */; };
 		FDA1EAA02A7E80A600EB564B /* HabitTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA1EA9F2A7E80A600EB564B /* HabitTrackerApp.swift */; };
 		FDA1EAA42A7E80A700EB564B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDA1EAA32A7E80A700EB564B /* Assets.xcassets */; };
 		FDA1EAA72A7E80A700EB564B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDA1EAA62A7E80A700EB564B /* Preview Assets.xcassets */; };
@@ -14,10 +16,13 @@
 		FDD558542A7E84BD00E1C5AF /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD558532A7E84BD00E1C5AF /* Habit.swift */; };
 		FDD558562A7E892400E1C5AF /* Double + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD558552A7E892400E1C5AF /* Double + Extension.swift */; };
 		FDD5585A2A7E8FCF00E1C5AF /* HabitsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD558592A7E8FCF00E1C5AF /* HabitsViewModel.swift */; };
+		FDD5585E2A7EBD5000E1C5AF /* ControlScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD5585D2A7EBD5000E1C5AF /* ControlScreenView.swift */; };
 		FDE7DE742A7E822000124F6F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE7DE732A7E822000124F6F /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FD8193232A7F7F1E00868DCD /* NewHabitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewHabitView.swift; sourceTree = "<group>"; };
+		FD8193252A7F830400868DCD /* HabitTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitTextField.swift; sourceTree = "<group>"; };
 		FDA1EA9C2A7E80A600EB564B /* HabitTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HabitTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDA1EA9F2A7E80A600EB564B /* HabitTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitTrackerApp.swift; sourceTree = "<group>"; };
 		FDA1EAA32A7E80A700EB564B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -26,6 +31,7 @@
 		FDD558532A7E84BD00E1C5AF /* Habit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Habit.swift; sourceTree = "<group>"; };
 		FDD558552A7E892400E1C5AF /* Double + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double + Extension.swift"; sourceTree = "<group>"; };
 		FDD558592A7E8FCF00E1C5AF /* HabitsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsViewModel.swift; sourceTree = "<group>"; };
+		FDD5585D2A7EBD5000E1C5AF /* ControlScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlScreenView.swift; sourceTree = "<group>"; };
 		FDE7DE732A7E822000124F6F /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -106,6 +112,8 @@
 			isa = PBXGroup;
 			children = (
 				FDE7DE732A7E822000124F6F /* HomeView.swift */,
+				FD8193232A7F7F1E00868DCD /* NewHabitView.swift */,
+				FDD5585D2A7EBD5000E1C5AF /* ControlScreenView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -122,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				FDD558512A7E837300E1C5AF /* RowHabitView.swift */,
+				FD8193252A7F830400868DCD /* HabitTextField.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -223,9 +232,12 @@
 			files = (
 				FDD558562A7E892400E1C5AF /* Double + Extension.swift in Sources */,
 				FDE7DE742A7E822000124F6F /* HomeView.swift in Sources */,
+				FD8193242A7F7F1E00868DCD /* NewHabitView.swift in Sources */,
+				FDD5585E2A7EBD5000E1C5AF /* ControlScreenView.swift in Sources */,
 				FDA1EAA02A7E80A600EB564B /* HabitTrackerApp.swift in Sources */,
 				FDD5585A2A7E8FCF00E1C5AF /* HabitsViewModel.swift in Sources */,
 				FDD558542A7E84BD00E1C5AF /* Habit.swift in Sources */,
+				FD8193262A7F830400868DCD /* HabitTextField.swift in Sources */,
 				FDD558522A7E837300E1C5AF /* RowHabitView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

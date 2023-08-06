@@ -7,21 +7,26 @@
 
 import Foundation
 
-struct Habit: Identifiable, Codable {
+struct Habit: Identifiable, Codable, Equatable {
     var id = UUID()
     let name: String
-    let amount: Double
+    var amount: Double
     let amountPerDay: Double
+    var measurement: String
+    var stride: Double {
+        switch amountPerDay {
+        case ..<10:
+            return 0.25
+        case 10...100:
+            return 1
+        default:
+            return 100
+        }
+    }
     var progress: Double {
         amount / amountPerDay
     }
     var isComplete: Bool {
         amount == amountPerDay
-    }
-    
-    init(name: String, amount: Double, amountPerDay: Double) {
-        self.name = name
-        self.amount = amount
-        self.amountPerDay = amountPerDay
     }
 }
