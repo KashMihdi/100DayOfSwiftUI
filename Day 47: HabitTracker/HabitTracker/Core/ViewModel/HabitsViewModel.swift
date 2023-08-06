@@ -19,10 +19,6 @@ class HabitsViewModel: ObservableObject {
     }
     
     init() {
-        //        habits = [
-        //            Habit(name: "Drink Water", amount: 1, amountPerDay: 3, measurement: "l"),
-        //            Habit(name: "Wake up at 6am", amount: 10, amountPerDay: 31, measurement: "day")
-        //        ]
         guard let data = UserDefaults.standard.data(forKey: "Habits") else {
             habits = []
             return
