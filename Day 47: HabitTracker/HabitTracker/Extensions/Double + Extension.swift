@@ -14,7 +14,7 @@ extension Double {
     /// Convert 1.2345 to "1.23"
     /// ```
     func asNumberStringPercent() -> String {
-        return String(format: "%.1f", self * 100)
+         String(format: "%.1f", self * 100)
     }
     
     /// Преобразует Double в строковое представление
@@ -22,7 +22,7 @@ extension Double {
     /// Convert 1.2345 to "1"
     /// ```
     func asNumberStringDigit() -> String {
-        return String(format: "%.0f", self)
+         String(format: "%.2f", self)
     }
     
     /// Преобразует Double в строковое представление с символом процента
@@ -30,7 +30,7 @@ extension Double {
     /// Convert 1.2345 to "1.23%"
     /// ```
     func asPercentString() -> String {
-        return asNumberStringPercent() + "%"
+         asNumberStringPercent() + "%"
     }
     
 }

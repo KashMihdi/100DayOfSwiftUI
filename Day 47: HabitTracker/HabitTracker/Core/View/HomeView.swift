@@ -25,11 +25,15 @@ struct HomeView: View {
                         RowHabitView(habit: habit, showDetail: $showControlScreen)
                     }
                 }
+                .onDelete(perform: delete)
             }
             .scrollIndicators(.hidden)
             .padding(.bottom, 80)
             .listStyle(.inset)
             .navigationTitle("Track your habit!")
+        }
+        .onDisappear {
+           UserDefaults.standard.set(Date(), forKey: "Date")
         }
         .sheet(isPresented: $showControlScreen) {
             ControlScreenView(selectedItem: $selectedHabit)
@@ -41,7 +45,7 @@ struct HomeView: View {
         }
         .safeAreaInset(edge: .bottom) {
             HStack {
-                Text(Date().formatted(date: .abbreviated, time: .omitted))
+                Text(vm.currentDay.formatted(date: .abbreviated, time: .omitted))
                     .font(.title2.bold())
                     .padding(.leading, 20)
                     .underline()
@@ -60,6 +64,10 @@ struct HomeView: View {
             .offset(y: 20)
             .background(.white)
         }
+    }
+    
+    private func delete(indexSet: IndexSet) {
+        vm.habits.remove(atOffsets: indexSet)
     }
 }
 

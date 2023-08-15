@@ -42,11 +42,6 @@ struct RowHabitView: View {
                         .font(.title3.bold())
                         .lineLimit(1)
                         .minimumScaleFactor(0.5)
-                    Text("\(habit.amount.asNumberStringPercent()) of \(habit.amountPerDay.asNumberStringDigit())")
-                        .font(.callout)
-                        .foregroundColor(.black.opacity(0.5))
-                        .lineLimit(1)
-                        .minimumScaleFactor(0.5)
                 }
                 .frame(width: 70)
             }

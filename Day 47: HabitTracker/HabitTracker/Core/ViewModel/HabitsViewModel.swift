@@ -8,7 +8,7 @@
 import Foundation
 
 class HabitsViewModel: ObservableObject {
-    
+    @Published var currentDay = Date()
     @Published var habits = [Habit]() {
         didSet {
             let encoder = JSONEncoder()
@@ -27,8 +27,6 @@ class HabitsViewModel: ObservableObject {
         if let habits = try? decoder.decode([Habit].self, from: data) {
             self.habits = habits
         }
-        
-        
     }
     
     func add(name: String, measurement: String, quantity: String) {
@@ -41,5 +39,4 @@ class HabitsViewModel: ObservableObject {
         guard let index = habits.firstIndex(where: { $0.id == habit.id } ) else { return }
         habits[index] = habit
     }
-    
 }

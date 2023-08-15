@@ -28,16 +28,23 @@ struct NewHabitView: View {
                 HStack {
                     Text("What do we measure?")
                         .font(.headline)
-                    HabitTextField(habitText: $measure, text: "Measurement")
+                        .padding(.leading)
+                    Spacer()
+                    HabitTextField(habitText: $measure, text: "Measure")
+                        .frame(width: 150)
                 }
-                .padding(.horizontal)
+                .frame(maxWidth: .infinity, alignment: .trailing)
                 
                 HStack {
                     HabitTextField(habitText: $quantity, text: "Quantity")
+                        .frame(width: 150)
+                        .keyboardType(.decimalPad)
+                    Spacer()
                     Text("How many will you limit??")
                         .font(.headline)
+                        .padding(.trailing)
                 }
-                .padding(.horizontal)
+                .frame(maxWidth: .infinity, alignment: .leading)
                 
                 Spacer()
                 
