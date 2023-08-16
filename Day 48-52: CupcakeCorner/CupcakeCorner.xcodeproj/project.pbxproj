@@ -7,22 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FD3359292A8CFB2C001D92E4 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3359282A8CFB2C001D92E4 /* Order.swift */; };
 		FD85C5272A8BC0F800B03B5F /* CupcakeCornerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD85C5262A8BC0F800B03B5F /* CupcakeCornerApp.swift */; };
 		FD85C5292A8BC0F800B03B5F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD85C5282A8BC0F800B03B5F /* ContentView.swift */; };
 		FD85C52B2A8BC0F800B03B5F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD85C52A2A8BC0F800B03B5F /* Assets.xcassets */; };
 		FD85C52E2A8BC0F800B03B5F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD85C52D2A8BC0F800B03B5F /* Preview Assets.xcassets */; };
-		FD85C5352A8BD85500B03B5F /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD85C5342A8BD85500B03B5F /* Order.swift */; };
+		FD85C5352A8BD85500B03B5F /* OrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD85C5342A8BD85500B03B5F /* OrderViewModel.swift */; };
 		FDFEE7B52A8BE1EA002A5793 /* AddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFEE7B42A8BE1EA002A5793 /* AddressView.swift */; };
 		FDFEE7B72A8BE31C002A5793 /* CheckoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFEE7B62A8BE31C002A5793 /* CheckoutView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FD3359282A8CFB2C001D92E4 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		FD85C5232A8BC0F800B03B5F /* CupcakeCorner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CupcakeCorner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD85C5262A8BC0F800B03B5F /* CupcakeCornerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CupcakeCornerApp.swift; sourceTree = "<group>"; };
 		FD85C5282A8BC0F800B03B5F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FD85C52A2A8BC0F800B03B5F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FD85C52D2A8BC0F800B03B5F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		FD85C5342A8BD85500B03B5F /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		FD85C5342A8BD85500B03B5F /* OrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewModel.swift; sourceTree = "<group>"; };
 		FDFEE7B42A8BE1EA002A5793 /* AddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressView.swift; sourceTree = "<group>"; };
 		FDFEE7B62A8BE31C002A5793 /* CheckoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -61,7 +63,8 @@
 				FD85C5282A8BC0F800B03B5F /* ContentView.swift */,
 				FDFEE7B62A8BE31C002A5793 /* CheckoutView.swift */,
 				FDFEE7B42A8BE1EA002A5793 /* AddressView.swift */,
-				FD85C5342A8BD85500B03B5F /* Order.swift */,
+				FD85C5342A8BD85500B03B5F /* OrderViewModel.swift */,
+				FD3359282A8CFB2C001D92E4 /* Order.swift */,
 				FD85C52A2A8BC0F800B03B5F /* Assets.xcassets */,
 				FD85C52C2A8BC0F800B03B5F /* Preview Content */,
 			);
@@ -146,7 +149,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FD85C5352A8BD85500B03B5F /* Order.swift in Sources */,
+				FD3359292A8CFB2C001D92E4 /* Order.swift in Sources */,
+				FD85C5352A8BD85500B03B5F /* OrderViewModel.swift in Sources */,
 				FDFEE7B52A8BE1EA002A5793 /* AddressView.swift in Sources */,
 				FDFEE7B72A8BE31C002A5793 /* CheckoutView.swift in Sources */,
 				FD85C5292A8BC0F800B03B5F /* ContentView.swift in Sources */,
