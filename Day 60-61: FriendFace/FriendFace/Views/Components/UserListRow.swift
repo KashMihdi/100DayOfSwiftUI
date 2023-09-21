@@ -9,7 +9,7 @@ import SwiftUI
 
 struct UserListRow: View {
     
-    let user: User
+    let user: CachedUser
     
     var body: some View {
         NavigationLink(destination: FullDetailView(user: user)) {
@@ -18,13 +18,13 @@ struct UserListRow: View {
                     .frame(width: 40)
                     .foregroundColor(user.isActive ? .green : .red)
                 VStack(alignment: .leading) {
-                    Text(user.name)
+                    Text(user.wrappedName)
                         .font(.title3.bold())
                         .foregroundColor(.black)
                     + Text(" (\(user.age.formatted()) y.o)")
                         .font(.headline)
                         .foregroundColor(.gray)
-                    Text(user.email)
+                    Text(user.wrappedEmail)
                 }
             }
             .frame(maxWidth: .infinity, alignment: .leading)
@@ -32,10 +32,10 @@ struct UserListRow: View {
     }
 }
 
-struct UserListRow_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationView {
-            UserListRow(user: User(id: "", isActive: false, name: "Mikle", age: 32, company: "Alum32", email: "alum32@yandex.ru", address: "Brynsk, Burova", about: "The most ordinary person", registered: Date(), tags: [], friends: []))
-        }
-    }
-}
+//struct UserListRow_Previews: PreviewProvider {
+//    static var previews: some View {
+//        NavigationView {
+//            UserListRow(user: User(id: "", isActive: false, name: "Mikle", age: 32, company: "Alum32", email: "alum32@yandex.ru", address: "Brynsk, Burova", about: "The most ordinary person", registered: Date(), tags: [], friends: []))
+//        }
+//    }
+//}

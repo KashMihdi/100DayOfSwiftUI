@@ -8,10 +8,27 @@
 import Foundation
 
 class UserViewModel: ObservableObject {
-    @Published var users: [User] = .init()
+    @Published var users: [CachedUser] = .init()
+    let storageManager: StorageManager = .shared
     
     init() {
-        getUsers()
+        getData()
+    }
+    
+    func getData() {
+        storageManager.fetchData { result in
+            switch result {
+            case let .success(data):
+                self.users = data
+                if users.isEmpty {
+                    print("Loading")
+                    getUsers()
+                }
+                print("Read CoreData")
+            case let .failure(error):
+                print(error.localizedDescription)
+            }
+        }
     }
     
     func getUsers() {
@@ -46,8 +63,13 @@ class UserViewModel: ObservableObject {
             print("Can't decode data")
             throw URLError(.cannotDecodeRawData)
         }
-        
-        self.users = users
+        storageManager.create(users)
+        storageManager.fetchData { result in
+            switch result {
+            case let .success(data): self.users = data
+            case let .failure(error): print(error.localizedDescription)
+            }
+        }
     }
 }
 
