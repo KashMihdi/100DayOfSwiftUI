@@ -12,6 +12,8 @@ import SwiftUI
 struct ContentView: View {
     @State private var image: Image?
     @State private var filterIntensity = 0.5
+    @State private var filterRadius = 5.0
+    @State private var filterScale = 5.0
     
     @State private var showingImagePicker = false
     @State private var inputImage: UIImage?
@@ -28,35 +30,57 @@ struct ContentView: View {
                 ZStack {
                     Rectangle()
                         .fill(.secondary)
-
+                    
                     Text("Tap to select a picture")
                         .foregroundColor(.white)
                         .font(.headline)
-
+                    
                     image?
                         .resizable()
                         .scaledToFit()
                 }
+                .frame(height: 300)
                 .onTapGesture {
                     showingImagePicker = true
                 }
-
-                HStack {
-                    Text("Intensity")
-                    Slider(value: $filterIntensity)
-                        .onChange(of: filterIntensity) { _ in applyProcessing()}
+                
+                if currentFilter.inputKeys.contains(kCIInputIntensityKey) {
+                    HStack {
+                        Text("Intensity")
+                        Slider(value: $filterIntensity)
+                            .onChange(of: filterIntensity) { _ in applyProcessing() }
+                    }
+                    .padding(.vertical)
                 }
-                .padding(.vertical)
-
+                
+                if currentFilter.inputKeys.contains(kCIInputRadiusKey) {
+                    HStack {
+                        Text("Radius")
+                        Slider(value: $filterRadius, in: 0...200)
+                            .onChange(of: filterRadius) { _ in applyProcessing() }
+                    }
+                    .padding(.vertical)
+                }
+                
+                if currentFilter.inputKeys.contains(kCIInputScaleKey) {
+                    HStack {
+                        Text("Scale")
+                        Slider(value: $filterScale, in: 0...10)
+                            .onChange(of: filterScale) { _ in applyProcessing() }
+                    }
+                    .padding(.vertical)
+                }
+                
                 HStack {
                     Button("Change Filter") {
                         showingFilterSheet = true
                     }
-
+                    
                     Spacer()
-
+                    
                     Button("Save", action: save)
                 }
+                Spacer()
             }
             .padding([.horizontal, .bottom])
             .navigationTitle("Instafilter")
@@ -72,6 +96,8 @@ struct ContentView: View {
                 Button("Sepia Tone") { setFilter(CIFilter.sepiaTone()) }
                 Button("Unsharp Mask") { setFilter(CIFilter.unsharpMask()) }
                 Button("Vignette") { setFilter(CIFilter.vignette()) }
+                Button("Gaussian Gradient") { setFilter(CIFilter.gaussianGradient()) }
+                Button("Kaleidoscope") { setFilter(CIFilter.kaleidoscope()) }
                 Button("Cancel", role: .cancel) { }
             }
         }
@@ -102,13 +128,13 @@ struct ContentView: View {
     
     func applyProcessing() {
         let inputKeys = currentFilter.inputKeys
-
+        
         if inputKeys.contains(kCIInputIntensityKey) { currentFilter.setValue(filterIntensity, forKey: kCIInputIntensityKey) }
         if inputKeys.contains(kCIInputRadiusKey) { currentFilter.setValue(filterIntensity * 200, forKey: kCIInputRadiusKey) }
         if inputKeys.contains(kCIInputScaleKey) { currentFilter.setValue(filterIntensity * 10, forKey: kCIInputScaleKey) }
-
+        
         guard let outputImage = currentFilter.outputImage else { return }
-
+        
         if let cgimg = context.createCGImage(outputImage, from: outputImage.extent) {
             let uiImage = UIImage(cgImage: cgimg)
             image = Image(uiImage: uiImage)
